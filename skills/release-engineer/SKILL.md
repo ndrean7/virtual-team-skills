@@ -48,9 +48,10 @@ retrospective, and you close the sprint in `.team/release.md`.
 ## How it works
 
 1. **Collect the evidence.** Check that every report exists:
-   `.team/brief.md`, `.team/design.md`, `.team/build-log.md`,
-   `.team/review.md`, `.team/security-report.md`,
-   `.team/qa-report.md`. A missing report is a missing check — it
+   `.team/brief.md`, `.team/design.md`, `.team/content.md`,
+   `.team/build-log.md`, `.team/review.md`,
+   `.team/security-report.md`, `.team/qa-report.md`,
+   `.team/finance.md`. A missing report is a missing check — it
    blocks shipping until it exists or is explicitly waived in
    writing by the user.
 2. **Run the gate.** Work the checklist below, one item at a time.
@@ -75,6 +76,7 @@ retrospective, and you close the sprint in `.team/release.md`.
 | 6 | Tests green | `.team/qa-report.md` shows the suite green, run with a second fuzz seed for Solidity, and the open gaps are listed with file and line |
 | 7 | Rollback written | The design doc's rollback is still valid for the code as built |
 | 8 | Notes ready | Release notes are written from the reports, not from memory |
+| 9 | Money accounted | `.team/finance.md` exists, totals are reconciled against budget, and nothing unpaid or pending is missing from it |
 
 A waived item needs a reason and the name of the person who waived
 it, written in the release file. A waiver without a name is a
@@ -91,7 +93,9 @@ Written from the reports, in this order:
    closed this sprint, with severity.
 4. **Known gaps** — the open items from the QA gap report and any
    waived gate items, with file and line where they apply.
-5. **How to roll back** — the exact undo, copied from the design
+5. **What it cost** — total spent against budget and total
+   received, from `.team/finance.md`.
+6. **How to roll back** — the exact undo, copied from the design
    doc and checked against the code as built.
 
 ### The retrospective (Reflect)
@@ -130,6 +134,6 @@ sprint's own files:
 
 ## Requirements
 
-- All six reports from the earlier roles.
+- All eight reports from the earlier roles.
 - Read access to the code as built.
 - Write access to `.team/release.md`.
