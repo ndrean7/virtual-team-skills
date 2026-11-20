@@ -1,6 +1,6 @@
 # Virtual Team Skills
 
-A small team that lives inside your coding agent. Seven roles, one
+A small team that lives inside your coding agent. Nine roles, one
 sprint, each role handing its written output to the next — so the work
 is checked by someone else at every step instead of by the same voice
 that wrote it.
@@ -13,11 +13,13 @@ Think → Plan → Build → Review → Test → Ship → Reflect
 | --- | --- | --- | --- |
 | Think | **office-hours** (CEO) | your idea | `.team/brief.md` |
 | Plan | **planner** | `.team/brief.md` | `.team/design.md` |
+| Plan | **content-creator** | `.team/brief.md`, `.team/design.md` | `.team/content.md` |
 | Build | **builder** | `.team/design.md` | code + `.team/build-log.md` |
 | Review | **reviewer** | code, `.team/build-log.md` | `.team/review.md` |
 | Review | **security-officer** | code, `.team/design.md` | `.team/security-report.md` |
 | Test | **qa** | code, `.team/review.md` | `.team/qa-report.md` |
-| Ship | **release-engineer** | all reports above | `.team/release.md` |
+| All steps | **finance-officer** | budgets, receipts, tool costs | `.team/finance.md` |
+| Ship | **release-engineer** | all reports above, `.team/finance.md` | `.team/release.md` |
 | Reflect | **release-engineer** | `.team/release.md` | retrospective inside it |
 
 Review and Test are separate voices on purpose: the reviewer reads
@@ -71,6 +73,14 @@ by the roles before it and never re-does their job:
   unverified, never as a confirmed bug.
 - **QA** measures coverage, writes tests that assert numbers, and
   runs the suite until green. A test that never runs is a draft.
+- The **content creator** writes from the brief and design, counts
+  the characters, verifies every handle and link, and writes every
+  repeat in fresh wording — a draft that matches an earlier one
+  gets rewritten, not shipped.
+- The **finance officer** tracks money across the whole sprint:
+  budget against actual, every expense with its source, tool
+  costs, and money in against money out. A number without a source
+  does not go in the report.
 - The **release engineer** ships only on evidence: all reports
   present, no open Critical/High, suite green, rollback written
   down.
@@ -94,6 +104,14 @@ textbook:
   proved with perft counts and Elo across matches, a radar change
   with error metrics on held-out data, a game change with real
   play-tests. A claim without a measured number is a guess.
+- **Content** follows a fresh-wording rule learned the hard way:
+  duplicate drafts got an account flagged, so every repeat is
+  written from a new angle in new words, with the character count
+  and every handle and link verified before delivery.
+- **Finance** follows a sourced-numbers rule: every amount names
+  its receipt, dashboard, or ledger, pending money is never
+  recorded as received, and the report records what happened — it
+  never advises and never promises.
 
 ## Roles
 
@@ -109,6 +127,12 @@ textbook:
   green, reports the gaps that remain.
 - **security-officer** — audits the way a human auditor does:
   scope, checklist, PoC, severity-rated report.
+- **content-creator** — writes ready-to-post X drafts, captions,
+  and short video scripts from the brief, every repeat in fresh
+  wording with counts and links verified.
+- **finance-officer** — tracks the money: budgets, expenses, tool
+  and subscription costs, revenue and payouts, every figure
+  sourced.
 - **release-engineer** — the ship checklist, the release notes, the
   rollback plan, and the retrospective.
 
